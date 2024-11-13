@@ -115,7 +115,7 @@ create table if not exists exam_result
 insert into subject_student (subject_id, student_id)
 values (1, 1),
        (1, 2);
-
+d
 
 with exam_data as (select subject.id   as subject_id,
                           subject.name as subject_name,
@@ -191,7 +191,7 @@ with exam_data as (select subject.id   as subject_id,
                         from subject
                                  join student_exams_result on student_exams_result.subject_id = subject.id
                         group by subject.id)
-select *
+select subject_result.subjects
 from subject_result;
 
 
