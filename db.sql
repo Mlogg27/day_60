@@ -115,7 +115,30 @@ create table if not exists exam_result
 insert into subject_student (subject_id, student_id)
 values (1, 1),
        (1, 2);
-d
+
+insert into exam (subject_id, name)
+values ('1', 'Final test');
+
+insert into exam_result (student_id, question_id, is_correct)
+values (1, 1, TRUE),
+       (1, 2, FALSE),
+       (1, 3, TRUE);
+
+insert into question (exam_id, question, correct_answer)
+values (1, 'What is 2+2', 4),
+       (1, 'What is 2+4', 6),
+       (1, 'What is 5+4', 9);
+
+insert into student (name)
+values ('Long'),
+       ('Hoàng'),
+       ('Sơn');
+
+insert into subject (name)
+values ('math'),
+       ('literature');
+
+
 
 with exam_data as (select subject.id   as subject_id,
                           subject.name as subject_name,
